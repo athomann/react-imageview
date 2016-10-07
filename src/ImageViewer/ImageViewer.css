@@ -1,0 +1,16 @@
+.ImageViewer-viewport {
+  border: 1px solid rgb(0, 0, 0);
+  overflow: hidden;
+  position: relative;
+}
+
+.ImageViewer-image {
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  position: absolute;
+  transition: transform 0.2s ease-in-out;
+}
