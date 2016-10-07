@@ -5,7 +5,6 @@ class ImageViewer extends Component {
 
   state = {
     scale: 1,
-    update: true,
     panEnabled: false,
     position: {
       x: (this.props.viewportWidth / 2) - (this.props.imageWidth / 2),
