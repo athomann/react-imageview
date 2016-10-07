@@ -34,7 +34,7 @@ class ImageViewer extends Component {
       const { clientX, clientY } = ev;
       this.setState({
         startX: clientX - this.state.position.x,
-        startY: clientY,
+        startY: clientY - this.state.position.y,
       });
 
       const { imageWidth: originalImageWidth, imageHeight: originalImageHeight } = this.props;
