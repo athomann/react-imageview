@@ -4,6 +4,7 @@ import './ImageViewer.css';
 class ImageViewer extends Component {
 
   state = {
+    cursor: 'pointer',
     scale: 1,
     panEnabled: false,
     position: {
@@ -18,6 +19,7 @@ class ImageViewer extends Component {
   });
 
   handleZoomOut = () => this.setState({
+    cursor: 'pointer',
     scale: 1,
     panEnabled: false,
     position: {
@@ -77,7 +79,7 @@ class ImageViewer extends Component {
   }
 
   render() {
-    const { cursor, position, scale } = this.state;
+    const { cursor, panEnabled, position, scale } = this.state;
     const { viewportWidth, viewportHeight, imageWidth, imageHeight } = this.props;
     return (
       <section
@@ -91,6 +93,7 @@ class ImageViewer extends Component {
           <img
             onMouseDown={this.handlePan}
             onMouseUp={this.handlePanStop}
+            onClick={!panEnabled && this.handleZoomIn}
             src={`${this.props.imageSrc}?height=${imageWidth}&=${imageHeight}`}
             className="ImageViewer-image"
             ref={(ref) => this.image = ref}
